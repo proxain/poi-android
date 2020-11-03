@@ -2,16 +2,14 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion compileSdk
+    compileSdkVersion rootProject.ext.compileSdk
 
     defaultConfig {
         applicationId "com.supercilex.poiandroid.demo"
-        minSdkVersion minSdk
-        targetSdkVersion targetSdk
+        minSdkVersion rootProject.ext.minSdk
+        targetSdkVersion rootProject.ext.targetSdk
         versionCode 1
-        versionName poiVersion
-
-        multiDexEnabled true
+        versionName rootProject.ext.poiVersion
     }
 
     buildTypes {
@@ -41,11 +39,10 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
 
-    implementation 'com.android.support:multidex:1.0.3'
-    implementation "com.android.support:design:$supportLibVersion"
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta6'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    implementation "com.google.android.gms:play-services-tasks:12.0.1"
+    implementation "com.google.android.gms:play-services-tasks:17.2.0"
 
     implementation 'pub.devrel:easypermissions:1.2.0'
 }
